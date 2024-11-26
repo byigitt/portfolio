@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, Coffee, Rocket } from "lucide-react";
+import { Heart, Coffee, Rocket, ExternalLink, Github, Link as LinkIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 const aboutSections = [
   {
@@ -15,6 +17,38 @@ const aboutSections = [
     icon: <Rocket className="h-5 w-5 text-primary" />,
     content: "I build modern web applications with a focus on user experience and performance. I love turning complex problems into simple, beautiful, and intuitive solutions.",
   },
+];
+
+const portfolioProjects = [
+  {
+    title: "Personal Portfolio",
+    description: "My personal portfolio website built with Next.js 15, TypeScript, and Tailwind CSS.",
+    image: "/portfolio/portfolio.png",
+    liveUrl: "https://portfolio.baris.pw",
+    githubUrl: "https://github.com/byigitt/portfolio-new",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    title: "Tourist AI Planner",
+    description: "Tourist AI Planner is a web application that helps users plan their trips by providing personalized recommendations for destinations, activities, and accommodations. Did my internship here. ",
+    image: "/portfolio/tourist.png",
+    liveUrl: "https://touristapplication.com",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    title: "StarSalesInv",
+    description: "Star Sales & Investment is committed to delivering high-quality products at competitive prices to businesses of all sizes.",
+    image: "/portfolio/starsales.png",
+    liveUrl: "https://starsalesinv.com",
+    tags: ["HTML", "CSS", "JavaScript"],
+  },
+  {
+    title: "Wholesale Template",
+    description: "Wholesale Template is a website template for wholesale businesses.",
+    image: "/portfolio/template.png",
+    liveUrl: "https://baris.pw/template1",
+    tags: ["HTML", "CSS", "JavaScript"],
+  }
 ];
 
 const container = {
@@ -68,6 +102,86 @@ export default function AboutPage() {
             </Card>
           </motion.div>
         ))}
+      </motion.div>
+
+      {/* Portfolio Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+        className="mt-20"
+      >
+        <h2 className="text-3xl font-bold tracking-tighter text-center mb-8">
+          Portfolio
+        </h2>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {portfolioProjects.map((project) => (
+            <motion.div
+              key={project.title}
+              variants={item}
+              className="group relative"
+            >
+              <Card className="h-full overflow-hidden hover:shadow-lg transition-all">
+                <Link 
+                  href={project.liveUrl} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block aspect-video group cursor-pointer overflow-hidden"
+                >
+                  <div className="relative w-full h-full transform transition-transform duration-300 group-hover:scale-105">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-all duration-300 group-hover:blur-sm"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black/20">
+                      <LinkIcon className="w-8 h-8 text-white" />
+                    </div>
+                  </div>
+                </Link>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                  <p className="text-muted-foreground mb-4">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-1 text-xs rounded-md bg-muted font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex gap-4">
+                    {project.liveUrl && (
+                      <Link
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Live Demo
+                      </Link>
+                    )}
+                    {project.githubUrl && (
+                      <Link
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        <Github className="h-4 w-4" />
+                        Source Code
+                      </Link>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
 
       <motion.div
