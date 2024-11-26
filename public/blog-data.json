@@ -5,7 +5,7 @@
       "title": "Building Modern Web Apps with Next.js and TypeScript",
       "date": "2024-01-02",
       "description": "Learn how to leverage Next.js 14 with TypeScript to build type-safe, performant web applications.",
-      "image": "/blog/nextjs-typescript.jpg",
+      "image": "https://baris.pw/blog/nextjs-typescript.jpg",
       "tags": [
         "nextjs",
         "typescript",
@@ -19,7 +19,7 @@
       "title": "Hello World - My First Blog Post",
       "date": "2024-01-01",
       "description": "Welcome to my first blog post! Here I share my thoughts about web development and technology.",
-      "image": "/blog/hello-world.jpg",
+      "image": "https://baris.pw/blog/hello-world.jpg",
       "tags": [
         "general",
         "introduction"
