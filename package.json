@@ -4,8 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "generate-blog": "node scripts/generate-blog-data.js",
+    "dev": "npm run generate-blog && next dev",
+    "build": "npm run generate-blog && next build",
     "start": "next start",
     "lint": "next lint"
   },
