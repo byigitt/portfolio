@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'baris.pw | Blog',
+  title: 'Barış Cem Bayburtlu - Blog',
   description: 'Read my thoughts on software development, design, and more.',
 }
 
