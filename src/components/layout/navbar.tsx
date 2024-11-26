@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { ModeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,9 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
 } from "@/components/ui/sheet";
 
 const routes = [
@@ -50,6 +54,12 @@ const routes = [
 ];
 
 export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center">
@@ -72,7 +82,7 @@ export function Navbar() {
             ))}
           </nav>
         </div>
-        <Sheet>
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Button
               variant="ghost"
@@ -83,6 +93,12 @@ export function Navbar() {
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="pr-0">
+            <SheetHeader>
+              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+              <SheetDescription className="sr-only">
+                Main navigation menu for mobile devices
+              </SheetDescription>
+            </SheetHeader>
             <div className="flex items-center mb-8">
               <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground">
                 <Code2 className="h-4 w-4" />
@@ -94,6 +110,7 @@ export function Navbar() {
                   key={route.href}
                   href={route.href}
                   className="block px-2 py-1 text-lg hover:text-foreground/80 transition-colors"
+                  onClick={handleLinkClick}
                 >
                   {route.label}
                 </Link>
