@@ -9,81 +9,80 @@ import { cn } from '@/lib/utils'
 import { useState, useEffect } from 'react'
 import type { BlogPost } from '@/lib/mdx'
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-}
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
-}
-
 const fallbackData = {
   posts: [],
   tags: []
 }
 
 export default function BlogPage() {
-  const [selectedTag, setSelectedTag] = useState<string>('')
+  const [selectedTags, setSelectedTags] = useState<string[]>([])
   const [posts, setPosts] = useState<BlogPost[]>([])
   const [tags, setTags] = useState<string[]>([])
-  const [loading, setLoading] = useState(true)
+  const [initialLoading, setInitialLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     async function loadData() {
       try {
-        setLoading(true)
-        setError(null)
-        
-        const response = await fetch('/blog-data.json')
-        if (!response.ok) {
-          throw new Error('Failed to load blog data')
-        }
-        
-        const data = await response.json()
-        
-        // Filter posts if a tag is selected
-        const filteredPosts = selectedTag
-          ? data.posts.filter((post: BlogPost) => post.tags.includes(selectedTag))
-          : data.posts
+        if (initialLoading) {
+          const response = await fetch('/blog-data.json')
+          if (!response.ok) {
+            throw new Error('Failed to load blog data')
+          }
+          
+          const data = await response.json()
+          setTags(data.tags)
+          
+          // Filter posts if tags are selected
+          const filteredPosts = selectedTags.length > 0
+            ? data.posts.filter((post: BlogPost) => 
+                post.tags.some(tag => selectedTags.includes(tag))
+              )
+            : data.posts
 
-        setPosts(filteredPosts)
-        setTags(data.tags)
+          setPosts(filteredPosts)
+          setInitialLoading(false)
+        } else {
+          // Client-side filtering without loading state
+          const response = await fetch('/blog-data.json')
+          const data = await response.json()
+          const filteredPosts = selectedTags.length > 0
+            ? data.posts.filter((post: BlogPost) => 
+                post.tags.some(tag => selectedTags.includes(tag))
+              )
+            : data.posts
+          setPosts(filteredPosts)
+        }
       } catch (error) {
         console.error('Error loading blog data:', error)
         setError('Failed to load blog posts. Please try again later.')
         setPosts(fallbackData.posts)
         setTags(fallbackData.tags)
-      } finally {
-        setLoading(false)
       }
     }
 
     loadData()
-  }, [selectedTag])
+  }, [selectedTags, initialLoading])
+
+  const toggleTag = (tag: string) => {
+    setSelectedTags(prev =>
+      prev.includes(tag)
+        ? prev.filter(t => t !== tag)
+        : [...prev, tag]
+    )
+  }
 
   if (error) {
     return (
       <div className="container mx-auto px-6 py-12">
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="text-center text-red-500"
-        >
+        <div className="text-center text-red-500">
           <p>{error}</p>
-        </motion.div>
+        </div>
       </div>
     )
   }
 
-  if (loading) {
+  if (initialLoading) {
     return (
       <div className="container mx-auto px-6 py-12">
         <div className="animate-pulse">
@@ -104,67 +103,54 @@ export default function BlogPage() {
 
   return (
     <div className="container mx-auto px-6 py-12">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="flex flex-col items-center justify-center mb-12 text-center"
-      >
+      <div className="flex flex-col items-center justify-center mb-12 text-center">
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">
           Blog Posts
         </h1>
         <p className="mt-4 text-muted-foreground max-w-[700px]">
           Thoughts, tutorials and insights about web development and technology.
         </p>
-      </motion.div>
+      </div>
 
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="mb-12 flex flex-wrap gap-3"
-      >
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+      <div className="mb-12 flex flex-wrap gap-3">
+        <button
           type="button"
-          onClick={() => setSelectedTag('')}
+          onClick={() => setSelectedTags([])}
           className={cn(
             "px-4 py-2 rounded-full text-sm transition-colors",
-            !selectedTag
+            selectedTags.length === 0
               ? "bg-primary text-primary-foreground"
               : "bg-muted/50 hover:bg-muted"
           )}
         >
           All
-        </motion.button>
+        </button>
         {tags.map((tagName) => (
-          <motion.button
+          <button
             key={tagName}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
             type="button"
-            onClick={() => setSelectedTag(tagName)}
+            onClick={() => toggleTag(tagName)}
             className={cn(
               "px-4 py-2 rounded-full text-sm transition-colors",
-              selectedTag === tagName
+              selectedTags.includes(tagName)
                 ? "bg-primary text-primary-foreground"
                 : "bg-muted/50 hover:bg-muted"
             )}
           >
             {tagName}
-          </motion.button>
+          </button>
         ))}
-      </motion.div>
+      </div>
 
       <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
+        key={selectedTags.join(',')}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3 }}
         className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3"
       >
         {posts.map((post) => (
-          <motion.div key={post.slug} variants={item}>
+          <div key={post.slug}>
             <Link
               href={`/blog/${post.slug}`}
               className="group flex flex-col rounded-xl border bg-card transition-all hover:bg-accent/50"
@@ -191,21 +177,27 @@ export default function BlogPage() {
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {post.tags.map((tagName) => (
-                    <span
+                    <button
+                      type="button"
                       key={tagName}
-                      className="rounded-md bg-muted px-2.5 py-1 text-xs font-medium"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        toggleTag(tagName);
+                      }}
+                      className="rounded-md bg-muted px-2.5 py-1 text-xs font-medium hover:bg-muted/80 transition-colors"
                     >
                       {tagName}
-                    </span>
+                    </button>
                   ))}
                 </div>
               </div>
             </Link>
-          </motion.div>
+          </div>
         ))}
       </motion.div>
 
-      {posts.length === 0 && !loading && !error && (
+      {posts.length === 0 && !initialLoading && !error && (
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -213,7 +205,7 @@ export default function BlogPage() {
           className="py-12 text-center"
         >
           <p className="text-muted-foreground">
-            No blog posts found {selectedTag && `for tag "${selectedTag}"`}.
+            No blog posts found {selectedTags.length > 0 && `for tags "${selectedTags.join(',')}"`}.
           </p>
         </motion.div>
       )}
