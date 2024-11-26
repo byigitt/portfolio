@@ -23,7 +23,7 @@ const portfolioProjects = [
   {
     title: "Personal Portfolio",
     description: "My personal portfolio website built with Next.js 15, TypeScript, and Tailwind CSS.",
-    image: "/portfolio/portfolio.png",
+    image: "https://baris.pw/portfolio/portfolio.png",
     liveUrl: "https://portfolio.baris.pw",
     githubUrl: "https://github.com/byigitt/portfolio-new",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
@@ -31,21 +31,21 @@ const portfolioProjects = [
   {
     title: "Tourist AI Planner",
     description: "Tourist AI Planner is a web application that helps users plan their trips by providing personalized recommendations for destinations, activities, and accommodations. Did my internship here. ",
-    image: "/portfolio/tourist.png",
+    image: "https://baris.pw/portfolio/tourist.png",
     liveUrl: "https://touristapplication.com",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
   {
     title: "StarSalesInv",
     description: "Star Sales & Investment is committed to delivering high-quality products at competitive prices to businesses of all sizes.",
-    image: "/portfolio/starsales.png",
+    image: "https://baris.pw/portfolio/starsales.png",
     liveUrl: "https://starsalesinv.com",
     tags: ["HTML", "CSS", "JavaScript"],
   },
   {
     title: "Wholesale Template",
     description: "Wholesale Template is a website template for wholesale businesses.",
-    image: "/portfolio/template.png",
+    image: "https://baris.pw/portfolio/template.png",
     liveUrl: "https://baris.pw/template1",
     tags: ["HTML", "CSS", "JavaScript"],
   }
