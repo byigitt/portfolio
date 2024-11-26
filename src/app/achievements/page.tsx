@@ -37,6 +37,10 @@ const achievements = [
         title: "Tubitak Science Fair 4006",
         description: "Worked as a project demonstrator and general assistant at the TUBITAK fair.",
       },
+      {
+        title: "Former Contributor of BilimIAL",
+        description: "BilimIAL is a community/page that supports and promotes science and technology in Turkey from my highschool.",
+      },
     ],
   },
 ];
