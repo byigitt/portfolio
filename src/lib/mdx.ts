@@ -1,8 +1,6 @@
-import fs from 'node:fs'
 import path from 'node:path'
+import { promises as fs } from 'node:fs'
 import matter from 'gray-matter'
-
-const BLOG_DIR = path.join(process.cwd(), 'src/content/blog')
 
 export type BlogPost = {
   slug: string
@@ -14,56 +12,56 @@ export type BlogPost = {
   content: string
 }
 
-export const getBlogPosts = (tag?: string): BlogPost[] => {
-  const files = fs.readdirSync(BLOG_DIR)
-  const posts = files
-    .filter((file) => file.endsWith('.mdx'))
-    .map((file) => {
-      const filePath = path.join(BLOG_DIR, file)
-      const fileContent = fs.readFileSync(filePath, 'utf8')
-      const { data, content } = matter(fileContent)
-      
-      return {
-        slug: file.replace('.mdx', ''),
-        title: data.title,
-        date: data.date,
-        description: data.description,
-        image: data.image,
-        tags: data.tags || [],
-        content,
-      }
-    })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+let blogPosts: BlogPost[] | null = null
 
+export async function getBlogPosts(tag?: string): Promise<BlogPost[]> {
+  if (blogPosts) return filterPosts(blogPosts, tag)
+
+  try {
+    const contentDir = path.join(process.cwd(), 'src/content/blog')
+    const files = await fs.readdir(contentDir)
+    const posts = await Promise.all(
+      files
+        .filter(file => file.endsWith('.mdx'))
+        .map(async file => {
+          const filePath = path.join(contentDir, file)
+          const source = await fs.readFile(filePath, 'utf8')
+          const { data, content } = matter(source)
+          
+          return {
+            slug: file.replace('.mdx', ''),
+            title: data.title as string,
+            date: data.date as string,
+            description: data.description as string,
+            image: data.image as string | undefined,
+            tags: (data.tags as string[]) || [],
+            content,
+          }
+        })
+    )
+
+    blogPosts = posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    return filterPosts(blogPosts, tag)
+  } catch (error) {
+    console.error('Error loading blog posts:', error)
+    return []
+  }
+}
+
+function filterPosts(posts: BlogPost[], tag?: string): BlogPost[] {
   if (tag) {
     return posts.filter(post => post.tags.includes(tag))
   }
-
   return posts
 }
 
-export const getBlogPost = (slug: string): BlogPost | null => {
-  try {
-    const filePath = path.join(BLOG_DIR, `${slug}.mdx`)
-    const fileContent = fs.readFileSync(filePath, 'utf8')
-    const { data, content } = matter(fileContent)
-
-    return {
-      slug,
-      title: data.title,
-      date: data.date,
-      description: data.description,
-      image: data.image,
-      tags: data.tags || [],
-      content,
-    }
-  } catch {
-    return null
-  }
+export async function getBlogPost(slug: string): Promise<BlogPost | null> {
+  const posts = await getBlogPosts()
+  return posts.find(post => post.slug === slug) || null
 }
 
-export const getAllTags = (): string[] => {
-  const posts = getBlogPosts()
+export async function getAllTags(): Promise<string[]> {
+  const posts = await getBlogPosts()
   const tags = new Set<string>()
   
   for (const post of posts) {
