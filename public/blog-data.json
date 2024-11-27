@@ -1,23 +1,23 @@
 {
   "posts": [
     {
-      "slug": "using-nextjs-with-typescript",
-      "title": "Building Modern Web Apps with Next.js and TypeScript",
-      "date": "2024-01-02",
-      "description": "Learn how to leverage Next.js 14 with TypeScript to build type-safe, performant web applications.",
-      "image": "https://baris.pw/blog/nextjs-typescript.jpg",
+      "slug": "cursor-the-future-of-ai-powered-development",
+      "title": "Cursor: The Future of AI-Powered Development",
+      "date": "2024-11-27",
+      "description": "A deep dive into Cursor IDE - the game-changing development environment that's revolutionizing how we write code with AI assistance.",
+      "image": "/cursor-blog.jpg",
       "tags": [
-        "nextjs",
-        "typescript",
-        "web-development",
-        "tutorial"
+        "tools",
+        "development",
+        "AI",
+        "productivity"
       ],
-      "content": "\r\nNext.js and TypeScript are a powerful combination for building modern web applications. In this post, I'll share some best practices and tips for using them together.\r\n\r\n## Why TypeScript with Next.js?\r\n\r\nTypeScript adds static typing to JavaScript, which helps catch errors early and improves the development experience. Here are some benefits:\r\n\r\n- Better IDE support with autocompletion\r\n- Catch type-related bugs before runtime\r\n- Improved code maintainability\r\n- Better documentation through types\r\n\r\n## Code Example\r\n\r\nHere's a simple example of a type-safe API route in Next.js:\r\n\r\n```typescript\r\ntype User = {\r\n  id: number;\r\n  name: string;\r\n  email: string;\r\n};\r\n\r\nasync function getUser(id: number): Promise<User> {\r\n  const response = await fetch(`/api/users/${id}`);\r\n  const user = await response.json();\r\n  return user;\r\n}\r\n```\r\n\r\n## Best Practices\r\n\r\n1. Always define types for your props\r\n2. Use interfaces for objects that can be extended\r\n3. Leverage Next.js's built-in TypeScript support\r\n4. Use strict mode in your tsconfig.json\r\n\r\n## Conclusion\r\n\r\nTypeScript and Next.js together provide an excellent foundation for building robust web applications. The type safety and developer experience improvements are well worth the initial learning curve. "
+      "content": "\r\nHey fellow developers! 👋 As a Computer Science student who's been neck-deep in various IDEs throughout my academic journey, I want to share my experience with a tool that's genuinely changed how I approach coding: Cursor IDE.\r\n\r\n## What is Cursor?\r\n\r\nIf you're familiar with VS Code (and let's be honest, who isn't?), think of Cursor as its AI-powered evolution. Built on the same foundations as VS Code, Cursor takes everything we love about our favorite editor and supercharges it with sophisticated AI capabilities.\r\n\r\n## Why Cursor Over Traditional IDEs?\r\n\r\nAs someone who's spent countless hours in VS Code, the transition to Cursor felt natural. But here's where it gets interesting - imagine having a pair programmer who:\r\n- Never gets tired\r\n- Has read practically every open-source codebase\r\n- Can explain complex code in simple terms\r\n- Helps you debug issues in seconds\r\n\r\nThat's Cursor for you.\r\n\r\n## The Game-Changing Features\r\n\r\n### 1. AI Chat That Actually Gets Context\r\n\r\nUnlike ChatGPT, which requires you to copy-paste code snippets and explain context repeatedly, Cursor's AI understands your entire codebase. It's like having a senior developer who's been working on your project since day one.\r\n\r\n```typescript\r\n// Instead of explaining your types and interfaces\r\ninterface User {\r\n  id: string;\r\n  name: string;\r\n  preferences: UserPreferences;\r\n}\r\n\r\n// Cursor already knows about them and can suggest implementations\r\n```\r\n\r\n### 2. The Composer - Your AI Pair Programmer\r\n\r\nThe Composer feature is where Cursor truly shines. It's not just about code completion; it's about code composition. Here's what makes it special:\r\n\r\n- **Contextual Understanding**: It doesn't just suggest the next line; it understands the broader architecture\r\n- **Multi-File Edits**: Can refactor code across multiple files while maintaining consistency\r\n- **Natural Language to Code**: Tell it what you want to build, and it creates the implementation\r\n\r\nFor example, you can say:\r\n\"Create a React component that fetches user data and displays it in a card with error handling\"\r\n\r\nAnd Cursor will generate a complete, production-ready component with proper error boundaries and loading states.\r\n\r\n### 3. Agent - Your Personal Dev Assistant\r\n\r\nThe Agent feature is like having a junior developer who can:\r\n- Set up project boilerplate\r\n- Add new features\r\n- Fix bugs\r\n- Explain complex code\r\n- Suggest optimizations\r\n\r\nBut unlike a junior dev, it has access to patterns from millions of codebases!\r\n\r\n## Real-World Comparison with Other AI Tools\r\n\r\n| Feature | Cursor | ChatGPT | GitHub Copilot |\r\n|---------|---------|----------|----------------|\r\n| Context Understanding | Full codebase | Single snippet | Current file |\r\n| Multi-file Edits | ✅ | ❌ | ❌ |\r\n| IDE Integration | Native | External | Plugin |\r\n| Code Analysis | Deep | Surface | Moderate |\r\n\r\n## Tips for VS Code Users Transitioning to Cursor\r\n\r\n1. Keep your VS Code keybindings - Cursor supports them\r\n2. Start with the AI chat for code explanations\r\n3. Gradually explore the Composer for larger changes\r\n4. Use the Agent for repetitive tasks\r\n\r\n## The Learning Curve\r\n\r\nComing from VS Code, the learning curve is surprisingly gentle. The real challenge isn't learning new shortcuts or interfaces - it's learning to think differently about how you can leverage AI in your development workflow.\r\n\r\n## When to Use What?\r\n\r\n- **Quick Fixes**: AI Chat\r\n- **New Features**: Composer\r\n- **Project Setup/Maintenance**: Agent\r\n- **Complex Refactoring**: Combination of all three\r\n\r\n## Conclusion\r\n\r\nAs a student who's seen the evolution of development tools, Cursor feels like a glimpse into the future. It's not about replacing developers - it's about augmenting our capabilities and letting us focus on the creative aspects of coding.\r\n\r\nThe best part? It's free for individual use, making it accessible to students and professionals alike. If you're a VS Code user looking to level up your development game, Cursor is definitely worth trying out.\r\n\r\nRemember, the goal isn't to let AI write all your code - it's to use AI as a tool to become a more efficient and effective developer. Happy coding! 🚀\r\n\r\n## Resources\r\n\r\n- [Cursor Official Website](https://cursor.sh)\r\n- [Cursor Documentation](https://cursor.sh/docs)\r\n- [GitHub Repository](https://github.com/getcursor/cursor) "
     },
     {
       "slug": "hello-world",
       "title": "Hello World - My First Blog Post",
-      "date": "2024-01-01",
+      "date": "2024-11-26",
       "description": "Welcome to my first blog post! Here I share my thoughts about web development and technology.",
       "image": "https://baris.pw/blog/hello-world.jpg",
       "tags": [
@@ -28,11 +28,11 @@
     }
   ],
   "tags": [
+    "AI",
+    "development",
     "general",
     "introduction",
-    "nextjs",
-    "tutorial",
-    "typescript",
-    "web-development"
+    "productivity",
+    "tools"
   ]
 }
