@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Barış Cem Bayburtlu - Achievements',
+  title: 'Achievements',
   description: 'My achievements and accomplishments.',
 }
 

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: 'Barış Cem Bayburtlu | Full Stack Developer',
-    template: '%s | Barış Cem Bayburtlu'
+    template: 'Barış Cem Bayburtlu | %s'
   },
   description: 'Full Stack Developer specializing in React, Next.js, and modern web technologies. Exploring the intersection of design and development.',
   keywords: ['Full Stack Developer', 'React', 'Next.js', 'TypeScript', 'Web Development', 'Software Engineer'],
