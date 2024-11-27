@@ -86,13 +86,35 @@ export default function BlogPage() {
     return (
       <div className="container mx-auto px-6 py-12">
         <div className="animate-pulse">
-          <div className="h-8 w-32 bg-muted rounded mb-8" />
+          {/* Header skeleton */}
+          <div className="flex flex-col items-center justify-center mb-12 text-center">
+            <div className="h-12 w-48 bg-muted rounded-lg mb-4" />
+            <div className="h-4 w-[700px] max-w-full bg-muted rounded" />
+          </div>
+
+          {/* Tags skeleton */}
+          <div className="mb-12 flex flex-wrap gap-3">
+            <div className="h-9 w-16 bg-muted rounded-full" />
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="h-9 w-24 bg-muted rounded-full" />
+            ))}
+          </div>
+
+          {/* Blog posts grid skeleton */}
           <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
             {[1, 2, 3].map((i) => (
-              <div key={i} className="rounded-xl border bg-card p-4">
-                <div className="aspect-[16/9] bg-muted rounded-lg mb-4" />
-                <div className="h-6 bg-muted rounded w-3/4 mb-2" />
-                <div className="h-4 bg-muted rounded w-1/2" />
+              <div key={i} className="rounded-xl border bg-card">
+                <div className="aspect-[16/9] bg-muted rounded-t-xl" />
+                <div className="p-6">
+                  <div className="h-4 w-24 bg-muted rounded mb-2" />
+                  <div className="h-6 w-full bg-muted rounded mb-2" />
+                  <div className="h-4 w-3/4 bg-muted rounded mb-4" />
+                  <div className="flex flex-wrap gap-2">
+                    {[1, 2].map((j) => (
+                      <div key={j} className="h-6 w-16 bg-muted rounded-md" />
+                    ))}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
