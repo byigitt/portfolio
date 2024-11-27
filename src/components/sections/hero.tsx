@@ -78,7 +78,7 @@ export function Hero() {
             <span className="sr-only">Email</span>
           </Button>
         </Link>
-        <Link href="/cv" target="_blank">
+        <Link href="/cv.pdf" target="_blank">
           <Button variant="ghost" size="icon" className="rounded-full">
             <FileText className="h-5 w-5" />
             <span className="sr-only">CV</span>
