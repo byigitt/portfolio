@@ -65,7 +65,7 @@ export function Navbar() {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2 group">
-            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground transition-transform duration-300 group-hover:rotate-45">
+            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground transition-transform duration-300 group-hover:-rotate-45">
               <Code2 className="h-4 w-4" />
             </div>
           </Link>
@@ -100,7 +100,7 @@ export function Navbar() {
               </SheetDescription>
             </SheetHeader>
             <div className="flex items-center mb-8">
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground transition-transform duration-300 group-hover:rotate-45">
+              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground transition-transform duration-300 group-hover:-rotate-45">
                 <Code2 className="h-4 w-4" />
               </div>
             </div>
