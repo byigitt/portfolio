@@ -103,14 +103,19 @@ export default function BlogPage() {
 
   return (
     <div className="container mx-auto px-6 py-12">
-      <div className="flex flex-col items-center justify-center mb-12 text-center">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col items-center justify-center mb-12 text-center"
+      >
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl">
           Blog Posts
         </h1>
         <p className="mt-4 text-muted-foreground max-w-[700px]">
           Thoughts, tutorials and insights about web development and technology.
         </p>
-      </div>
+      </motion.div>
 
       <div className="mb-12 flex flex-wrap gap-3">
         <button
