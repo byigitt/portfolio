@@ -2,14 +2,15 @@ import path from 'node:path'
 import { promises as fs } from 'node:fs'
 import matter from 'gray-matter'
 
-export type BlogPost = {
+export interface BlogPost {
   slug: string
   title: string
   date: string
   description: string
+  content: string
   image?: string
   tags: string[]
-  content: string
+  authors: string[]
 }
 
 let blogPosts: BlogPost[] | null = null
@@ -36,6 +37,7 @@ export async function getBlogPosts(tag?: string): Promise<BlogPost[]> {
             image: data.image as string | undefined,
             tags: (data.tags as string[]) || [],
             content,
+            authors: Array.isArray(data.authors) ? data.authors : [],
           }
         })
     )
@@ -71,4 +73,8 @@ export async function getAllTags(): Promise<string[]> {
   }
   
   return Array.from(tags).sort()
+}
+
+export async function getAllPosts(): Promise<BlogPost[]> {
+  return getBlogPosts()
 } 
