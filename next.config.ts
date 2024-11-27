@@ -4,7 +4,11 @@ import remarkGfm from 'remark-gfm'
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [remarkGfm]
+    remarkPlugins: [[remarkGfm, { 
+      singleTilde: false,
+      tablePipeAlign: true,
+      tableCellPadding: true
+    }]],
   },
 })
 
