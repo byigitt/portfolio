@@ -6,6 +6,7 @@ import { getBlogPost, getBlogPosts } from '@/lib/mdx'
 import { BlogPlaceholder } from '@/components/ui/blog-placeholder'
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { mdxComponents } from '@/components/mdx/mdx-components'
 
 export const dynamic = 'force-static'
 export const dynamicParams = false
@@ -112,7 +113,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
             </div>
           </div>
           <div className="prose prose-gray dark:prose-invert max-w-none">
-            <MDXRemote source={post.content} />
+            <MDXRemote source={post.content} components={mdxComponents} />
           </div>
         </div>
       </article>
