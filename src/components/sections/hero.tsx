@@ -17,17 +17,17 @@ export function Hero() {
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent p-4">
           Barış Cem Bayburtlu
         </h1>
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl"
         >
-          A dedicated software engineering student passionate about exploring new technologies 
+          A dedicated software engineering student passionate about exploring new technologies
           and developing innovative solutions.
         </motion.p>
       </motion.div>
-      
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -78,7 +78,7 @@ export function Hero() {
             <span className="sr-only">Email</span>
           </Button>
         </Link>
-        <Link href="/cv.pdf" target="_blank">
+        <Link href="https://baris.pw/docs/cv.pdf" target="_blank">
           <Button variant="ghost" size="icon" className="rounded-full">
             <FileText className="h-5 w-5" />
             <span className="sr-only">CV</span>
@@ -87,4 +87,4 @@ export function Hero() {
       </motion.div>
     </div>
   );
-} 
+}
