@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, FileText } from "lucide-react";
+import { Github, Linkedin, Mail, FileText, KeyRound } from "lucide-react";
 
 export function Hero() {
   return (
@@ -82,6 +82,12 @@ export function Hero() {
           <Button variant="ghost" size="icon" className="rounded-full">
             <FileText className="h-5 w-5" />
             <span className="sr-only">CV</span>
+          </Button>
+        </Link>
+        <Link href="https://github.com/byigitt.pgp" target="_blank" rel="noopener noreferrer">
+          <Button variant="ghost" size="icon" className="rounded-full">
+            <KeyRound className="h-5 w-5" />
+            <span className="sr-only">PGP Key</span>
           </Button>
         </Link>
       </motion.div>
