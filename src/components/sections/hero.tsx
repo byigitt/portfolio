@@ -84,7 +84,7 @@ export function Hero() {
             <span className="sr-only">CV</span>
           </Button>
         </Link>
-        <Link href="https://github.com/byigitt.pgp" target="_blank" rel="noopener noreferrer">
+        <Link href="https://github.com/byigitt.gpg" target="_blank" rel="noopener noreferrer">
           <Button variant="ghost" size="icon" className="rounded-full">
             <KeyRound className="h-5 w-5" />
             <span className="sr-only">PGP Key</span>
