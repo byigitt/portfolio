@@ -1,6 +1,5 @@
 User-Agent: *
 Allow: /
 Disallow: /api/
-Disallow: /admin/
 
 Sitemap: https://portfolio.baris.pw/sitemap.xml 
