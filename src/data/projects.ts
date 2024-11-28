@@ -20,11 +20,36 @@ export const projects: Project[] = [
     category: "web"
   },
   {
+    title: "Flashy",
+    description: "Modern offline flashcard application for students to use.",
+    stars: 0,
+    tags: ["Next.js", "TypeScript", "Offline", "Study", "Flashcards"],
+    github: "https://github.com/byigitt/flashy",
+    link: "https://flashy-byigitt.vercel.app",
+    category: "web"
+  },
+  {
+    title: "OneTimeLink",
+    description: "One-time-link generator for uploading files.",
+    stars: 4,
+    tags: ["Next.js", "TypeScript", "File Upload", "One-Time Links"],
+    github: "https://github.com/byigitt/onetimelink",
+    category: "web"
+  },
+  {
     title: "URL Shortener",
     description: "A simple but effective URL shortener service built with JavaScript.",
     stars: 1,
     tags: ["JavaScript", "URL Shortening", "Web App"],
     github: "https://github.com/byigitt/shrtn",
+    category: "web"
+  },
+  {
+    title: "React Note",
+    description: "Compact note-taking application optimized for mobile use.",
+    stars: 1,
+    tags: ["React", "JavaScript", "Mobile-First", "Notes"],
+    github: "https://github.com/byigitt/react-note",
     category: "web"
   },
 
@@ -63,6 +88,14 @@ export const projects: Project[] = [
     github: "https://github.com/byigitt/spotify-daily-playlist",
     category: "automation"
   },
+  {
+    title: "Visa Checker",
+    description: "Automated Schengen visa appointment tracker with Telegram notifications.",
+    stars: 45,
+    tags: ["TypeScript", "Automation", "Telegram", "Notifications"],
+    github: "https://github.com/byigitt/visa-checker",
+    category: "automation"
+  },
 
   // Development Tools
   {
@@ -81,6 +114,14 @@ export const projects: Project[] = [
     github: "https://github.com/byigitt/transcriptor",
     category: "tools"
   },
+  {
+    title: "Ollama Chat",
+    description: "Chat with your local LLM model using Ollama API inside your terminal.",
+    stars: 2,
+    tags: ["JavaScript", "CLI", "LLM", "AI"],
+    github: "https://github.com/byigitt/ollama-chat",
+    category: "tools"
+  },
 
   // CLI & Utilities
   {
@@ -97,6 +138,14 @@ export const projects: Project[] = [
     stars: 1,
     tags: ["JavaScript", "Algorithm", "Game Helper", "CLI"],
     github: "https://github.com/byigitt/wordle-finder",
+    category: "cli"
+  },
+  {
+    title: "Parolla Finder",
+    description: "Word finder tool for the Parolla game.",
+    stars: 1,
+    tags: ["JavaScript", "CLI", "Word Games", "Helper"],
+    github: "https://github.com/byigitt/parolla-finder",
     category: "cli"
   }
 ]; 
