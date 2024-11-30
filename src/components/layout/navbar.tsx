@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Link from "next/link";
 import { ModeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -8,7 +8,6 @@ import { Code2, Menu } from "lucide-react";
 import {
   Sheet,
   SheetContent,
-  SheetTrigger,
   SheetHeader,
   SheetTitle,
   SheetDescription,
@@ -53,15 +52,66 @@ const routes = [
   },
 ];
 
+const DRAG_THRESHOLD = 50;
+
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+  const isSwiping = useRef(false);
 
   const handleLinkClick = () => {
     setIsOpen(false);
   };
 
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const SWIPE_START_THRESHOLD = 150; // Increase this value as needed
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  
+    if (isOpen) {
+      // Allow swiping from anywhere to close the menu
+      isSwiping.current = true;
+    } else {
+      // Increase the touch start area to improve usability
+      isSwiping.current = touchStartX.current < SWIPE_START_THRESHOLD;
+    }
+  };
+  
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isSwiping.current) return;
+    
+  
+    touchEndX.current = e.touches[0].clientX;
+    const swipeDistance = touchEndX.current - touchStartX.current;
+  
+    // If swiping right and menu is closed
+    if (swipeDistance > DRAG_THRESHOLD && !isOpen) {
+      setIsOpen(true);
+      isSwiping.current = false;
+    }
+    // If swiping left and menu is open
+    else if (swipeDistance < -DRAG_THRESHOLD && isOpen) {
+      setIsOpen(false);
+      isSwiping.current = false;
+    }
+  };
+
+  const handleTouchEnd = () => {
+    isSwiping.current = false;
+  };
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header 
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+    >
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2 group">
@@ -83,16 +133,18 @@ export function Navbar() {
           </nav>
         </div>
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild>
-            <Button
-              variant="ghost"
-              className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
-            >
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle Menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left" className="pr-0">
+          <Button
+            variant="ghost"
+            onClick={toggleMenu}
+            className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
+          >
+            <Menu className="h-5 w-5" />
+            <span className="sr-only">Toggle Menu</span>
+          </Button>
+          <SheetContent 
+            side="left" 
+            className="pr-0"
+          >
             <SheetHeader>
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <SheetDescription className="sr-only">
@@ -126,4 +178,4 @@ export function Navbar() {
       </div>
     </header>
   );
-} 
+}
