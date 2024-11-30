@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: 'Barış Cem Bayburtlu | Full Stack Developer',
     description: 'Full Stack Developer specializing in React, Next.js, and modern web technologies.',
     images: ['/og-image.jpg'],
-    creator: '@bariscemb'
+    creator: '@bariscmb'
   },
   robots: {
     index: true,
