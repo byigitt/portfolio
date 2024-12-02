@@ -29,8 +29,8 @@ const portfolioProjects = [
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI"],
   },
   {
-    title: "Ostim Solana Hackaton",
-    description: "Participated in the Ostim Solana Hackaton and won the 1st place with a team of 4 people.",
+    title: "Soulana",
+    description: "Soulana is a web application that allows users to donate secure, fast and transparently using blockchain technology. We participated in the Ostim Solana Hackaton and won the 1st place with a team of 3 people.",
     image: "https://baris.pw/portfolio/soulana.png",
     liveUrl: "https://cyberia-portfolio.vercel.app",
     githubUrl: "https://github.com/byigitt/cyberia-portfolio",
