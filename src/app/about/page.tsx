@@ -33,7 +33,7 @@ const portfolioProjects = [
     description: "Soulana is a web application that allows users to donate secure, fast and transparently using blockchain technology. We participated in the Ostim Solana Hackaton and won the 1st place with a team of 3 people.",
     image: "https://baris.pw/portfolio/soulana.png",
     liveUrl: "https://cyberia-frontend.vercel.app",
-    githubUrl: "https://github.com/byigitt/cyberia-frontend",
+    githubUrl: "https://github.com/wearesoulana/soulana-frontend",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI"],
   },
   {
