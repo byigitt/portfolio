@@ -26,7 +26,15 @@ const portfolioProjects = [
     image: "https://baris.pw/portfolio/portfolio.png",
     liveUrl: "https://portfolio.baris.pw",
     githubUrl: "https://github.com/byigitt/portfolio-new",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI"],
+  },
+  {
+    title: "Ostim Solana Hackaton",
+    description: "Participated in the Ostim Solana Hackaton and won the 1st place with a team of 4 people.",
+    image: "https://baris.pw/portfolio/soulana.png",
+    liveUrl: "https://cyberia-portfolio.vercel.app",
+    githubUrl: "https://github.com/byigitt/cyberia-portfolio",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI"],
   },
   {
     title: "Tourist AI Planner",
