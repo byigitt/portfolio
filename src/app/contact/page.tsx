@@ -11,7 +11,6 @@ import { Textarea } from "@/components/ui/textarea";
 export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Add your form submission logic here
   };
 
   return (
@@ -38,15 +37,25 @@ export default function ContactPage() {
         >
           <Card>
             <CardHeader>
-              <CardTitle>Contact Form</CardTitle>
+              <CardTitle className="flex items-center justify-between">
+                Contact Form
+                <span className="text-sm font-normal text-yellow-600 dark:text-yellow-400 bg-yellow-100 dark:bg-yellow-900/30 px-2 py-1 rounded-md">
+                  Coming Soon
+                </span>
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="bg-muted/50 rounded-lg p-4 mb-4">
+                <p className="text-sm text-muted-foreground">
+                  🚧 The contact form is currently under development. Please use the alternative contact methods provided on the right to reach out to me.
+                </p>
+              </div>
+              <form onSubmit={handleSubmit} className="space-y-4 opacity-60">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">
                     Name
                   </label>
-                  <Input id="name" placeholder="Your name" required />
+                  <Input id="name" placeholder="Your name" disabled />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium">
@@ -56,7 +65,7 @@ export default function ContactPage() {
                     id="email"
                     type="email"
                     placeholder="your@email.com"
-                    required
+                    disabled
                   />
                 </div>
                 <div className="space-y-2">
@@ -66,11 +75,11 @@ export default function ContactPage() {
                   <Textarea
                     id="message"
                     placeholder="Your message"
-                    required
+                    disabled
                     className="min-h-[150px]"
                   />
                 </div>
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full" disabled>
                   <Send className="w-4 h-4 mr-2" />
                   Send Message
                 </Button>
