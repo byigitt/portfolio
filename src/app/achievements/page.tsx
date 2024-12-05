@@ -28,8 +28,8 @@ const achievements = [
         description: "Participated in the G-20 committee at the MUN event organized by Yusuf Kalkavan Anatolian High School and received the Outstanding Delegate Award.",
       },
       {
-        title: "1st place @ Ostim Solana Hackaton",
-        description: "Participated in the Ostim Solana Hackaton with our project named Soulana and won the 1st place with a team of 3 people.",
+        title: "1st place @ Ostim Solana Hackathon",
+        description: "Participated in the Ostim Solana Hackathon with our project named Soulana and won the 1st place with a team of 3 people.",
       },
     ],
   },
