@@ -18,7 +18,7 @@ const skills = {
   tools: {
     icon: <Laptop className="h-5 w-5" />,
     title: "Tools",
-    items: ["Visual Studio Code", "Adobe Photoshop", "Figma", "Adobe Premiere", "Vegas Pro"],
+    items: ["Cursor", "Ollama", "Visual Studio Code", "Adobe Photoshop", "Figma", "Adobe Premiere", "Vegas Pro"],
   },
   languages: {
     icon: <Globe className="h-5 w-5" />,

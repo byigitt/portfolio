@@ -10,11 +10,11 @@ const achievements = [
     icon: <Users className="h-5 w-5 text-primary" />,
     items: [
       {
-        title: "GDG on Campus",
+        title: "GDG on Çankaya University",
         description: "Currently serving as a Hackathon & Software Team Member (Sept 2024 - Present). Previously served as a Shell Team Member (Dec 2022 - June 2024).",
       },
       {
-        title: "Discord Community Management",
+        title: "Community Management",
         description: "Volunteered as a community manager on a large Discord server with over 145,000 members.",
       },
     ],
@@ -42,8 +42,8 @@ const achievements = [
         description: "Worked as a project demonstrator and general assistant at the TUBITAK fair.",
       },
       {
-        title: "Former Contributor of BilimIAL",
-        description: "BilimIAL is a community/page that supports and promotes science and technology in Turkey from my highschool.",
+        title: "Former Contributor of @bilimial",
+        description: "@bilimial is a community/page that supports and promotes science and technology in Turkey from my highschool.",
       },
     ],
   },
