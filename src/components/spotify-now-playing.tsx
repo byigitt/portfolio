@@ -54,10 +54,10 @@ export function SpotifyNowPlaying() {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="flex items-center gap-4 bg-zinc-900/90 backdrop-blur-sm p-2 pr-4 rounded-lg max-w-sm w-full mt-6 -mb-2"
+      className="flex items-center gap-4 dark:bg-zinc-900/90 bg-white/90 backdrop-blur-sm p-2 pr-4 rounded-lg max-w-sm w-full mt-6 -mb-2 border dark:border-zinc-800 border-zinc-200"
     >
       <div className="flex items-center gap-2">
-        <div className="relative w-12 h-12 rounded-md overflow-hidden bg-zinc-800 flex-shrink-0">
+        <div className="relative w-12 h-12 rounded-md overflow-hidden dark:bg-zinc-800 bg-zinc-100 flex-shrink-0">
           {data.albumImageUrl && (
             <Image
               src={data.albumImageUrl}
@@ -73,11 +73,11 @@ export function SpotifyNowPlaying() {
             href={data.songUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-sm text-zinc-100 hover:underline truncate block"
+            className="font-medium text-sm dark:text-zinc-100 text-zinc-900 hover:underline truncate block"
           >
             {data.title}
           </a>
-          <p className="text-xs text-zinc-400 truncate">{data.artist}</p>
+          <p className="text-xs dark:text-zinc-400 text-zinc-500 truncate">{data.artist}</p>
         </div>
       </div>
       <div className="flex items-center gap-3 flex-shrink-0">
