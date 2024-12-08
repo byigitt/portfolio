@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, FileText, KeyRound } from "lucide-react";
+import { SpotifyNowPlaying } from "@/components/spotify-now-playing";
 
 export function Hero() {
   return (
@@ -12,7 +13,7 @@ export function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col items-center justify-center space-y-4 text-center"
+        className="flex flex-col items-center justify-center space-y-4 text-center mb-4"
       >
         <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent p-4">
           Barış Cem Bayburtlu
@@ -54,6 +55,13 @@ export function Hero() {
         </Link>
       </motion.div>
 
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
+        <SpotifyNowPlaying />
+      </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
