@@ -37,6 +37,22 @@ const portfolioProjects = [
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI"],
   },
   {
+    title: "Flashy",
+    description: "Flashy is a modern, intuitive flashcard application built with Next.js 15 that helps users study effectively through digital flashcards. Features include group organization, study mode with shuffle functionality, and smooth animations.",
+    image: "https://baris.pw/portfolio/flashy.png", 
+    liveUrl: "https://flashy-byigitt.vercel.app/",
+    githubUrl: "https://github.com/byigitt/flashy",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI"]
+  },
+  {
+    title: "Suncore",
+    description: "Suncore is an innovative open-source audio transformation platform inspired by nightcore.studio, designed to help users create nightcore versions of their favorite music. Features include real-time playback speed adjustment, reverb control, bass boost, and SoundCloud API integration.",
+    image: "https://baris.pw/portfolio/suncore.png",
+    liveUrl: "https://suncore.vercel.app",
+    githubUrl: "https://github.com/byigitt/suncore",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "Tone.js"]
+  },
+  {
     title: "Tourist AI Planner",
     description: "Tourist AI Planner is a web application that helps users plan their trips by providing personalized recommendations for destinations, activities, and accommodations. Did my internship here. ",
     image: "https://baris.pw/portfolio/tourist.png",
