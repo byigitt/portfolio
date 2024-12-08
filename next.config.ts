@@ -13,10 +13,17 @@ const withMDX = createMDX({
 })
 
 const nextConfig: NextConfig = {
-  output: 'export' as const,
+  output: 'standalone',
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.scdn.co',
+        pathname: '/**',
+      },
+    ],
   }
 }
 
