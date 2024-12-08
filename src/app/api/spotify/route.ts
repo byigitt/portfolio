@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export const runtime = 'edge';
+export const revalidate = 180; // Cache for 3 minutes
 
 const client_id = process.env.SPOTIFY_CLIENT_ID;
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
@@ -12,7 +13,11 @@ const TOKEN_ENDPOINT = 'https://accounts.spotify.com/api/token';
 
 async function getAccessToken() {
   if (!refresh_token) {
-    throw new Error('No refresh token available');
+    throw new Error(`No refresh token available. Environment check: 
+      CLIENT_ID: ${client_id ? 'Set' : 'Not Set'},
+      CLIENT_SECRET: ${client_secret ? 'Set' : 'Not Set'},
+      REFRESH_TOKEN: ${refresh_token ? 'Set' : 'Not Set'}`
+    );
   }
 
   const response = await fetch(TOKEN_ENDPOINT, {
@@ -37,16 +42,27 @@ export async function GET() {
       headers: {
         Authorization: `Bearer ${access_token}`,
       },
+      next: {
+        revalidate: 180 // Cache for 3 minutes
+      }
     });
 
     if (response.status === 204 || response.status > 400) {
-      return NextResponse.json({ isPlaying: false });
+      return NextResponse.json({ isPlaying: false }, {
+        headers: {
+          'Cache-Control': 'public, s-maxage=180, stale-while-revalidate=60'
+        }
+      });
     }
 
     const song = await response.json();
 
     if (!song.item) {
-      return NextResponse.json({ isPlaying: false });
+      return NextResponse.json({ isPlaying: false }, {
+        headers: {
+          'Cache-Control': 'public, s-maxage=180, stale-while-revalidate=60'
+        }
+      });
     }
 
     return NextResponse.json({
@@ -58,11 +74,18 @@ export async function GET() {
     }, {
       headers: {
         'Access-Control-Allow-Origin': '*',
-        'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30',
+        'Cache-Control': 'public, s-maxage=180, stale-while-revalidate=60'
       },
     });
   } catch (error) {
     console.error('Error fetching Spotify data:', error);
-    return NextResponse.json({ isPlaying: false });
+    return NextResponse.json({ 
+      isPlaying: false,
+      error: error instanceof Error ? error.message : 'Unknown error'
+    }, {
+      headers: {
+        'Cache-Control': 'public, s-maxage=180, stale-while-revalidate=60'
+      }
+    });
   }
 }

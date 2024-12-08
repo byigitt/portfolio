@@ -21,7 +21,7 @@ export function SpotifyNowPlaying() {
     const fetchData = async () => {
       try {
         const res = await fetch('/api/spotify', {
-          next: { revalidate: 30 },
+          next: { revalidate: 180 }, // Match the 3-minute cache
         });
         
         if (!res.ok) {
@@ -39,7 +39,8 @@ export function SpotifyNowPlaying() {
     };
 
     fetchData();
-    const interval = setInterval(fetchData, 30000);
+    // Update interval to match cache duration (3 minutes = 180000ms)
+    const interval = setInterval(fetchData, 180000);
 
     return () => clearInterval(interval);
   }, []);
@@ -80,15 +81,14 @@ export function SpotifyNowPlaying() {
         </div>
       </div>
       <div className="flex items-center gap-3 flex-shrink-0">
-        <div className="w-8 h-8 rounded-full bg-[#1DB954] flex items-center justify-center">
+        <div className="w-6 h-6 rounded-full bg-[#1DB954] flex items-center justify-center">
           {data.isPlaying ? (
             <Pause className="w-4 h-4 text-black" />
           ) : (
             <Play className="w-4 h-4 text-black" />
           )}
         </div>
-
       </div>
     </motion.div>
   );
-} 
+}
