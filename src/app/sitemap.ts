@@ -23,11 +23,31 @@ export default async function sitemap() {
       lastModified: buildDate,
     },
     {
-      url: `${baseUrl}/blog`,
+      url: `${baseUrl}/skills`,
+      lastModified: buildDate,
+    },
+    {
+      url: `${baseUrl}/education`,
+      lastModified: buildDate,
+    },
+    {
+      url: `${baseUrl}/experience`,
       lastModified: buildDate,
     },
     {
       url: `${baseUrl}/projects`,
+      lastModified: buildDate,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: buildDate,
+    },
+    {
+      url: `${baseUrl}/achievements`,
+      lastModified: buildDate,
+    },
+    {
+      url: `${baseUrl}/contact`,
       lastModified: buildDate,
     },
   ]
