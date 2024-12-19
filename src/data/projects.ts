@@ -65,7 +65,7 @@ export const projects: Project[] = [
   {
     title: "DDGS - DuckDuckGo Search",
     description: "A TypeScript package that allows you to search the web using DuckDuckGo's API.",
-    stars: 6,
+    stars: 7,
     tags: ["TypeScript", "Node.js", "Search", "API"],
     github: "https://github.com/eudalabs/ddgs",
     category: "api"
@@ -91,7 +91,7 @@ export const projects: Project[] = [
   {
     title: "Visa Checker",
     description: "Automated Schengen visa appointment tracker with Telegram notifications.",
-    stars: 59,
+    stars: 69,
     tags: ["TypeScript", "Automation", "Telegram", "Notifications"],
     github: "https://github.com/byigitt/visa-checker",
     category: "automation"
@@ -127,7 +127,7 @@ export const projects: Project[] = [
   {
     title: "AIC - AI Commit Messages",
     description: "A CLI tool that generates commit messages using AI, streamlining the git workflow for developers.",
-    stars: 12,
+    stars: 13,
     tags: ["TypeScript", "AI", "CLI", "Git"],
     github: "https://github.com/eudalabs/aic",
     category: "cli"
