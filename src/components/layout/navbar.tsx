@@ -117,8 +117,8 @@ export function Navbar() {
         <div className="hidden md:flex w-full items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground transition-transform duration-300 group-hover:-rotate-45">
-              <Code2 className="h-4 w-4" />
+            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground">
+              <Code2 className="h-4 w-4 transition-transform duration-300 group-hover:-rotate-45" />
             </div>
           </Link>
 
@@ -182,8 +182,8 @@ export function Navbar() {
             </SheetContent>
           </Sheet>
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground transition-transform duration-300 group-hover:-rotate-45">
-              <Code2 className="h-4 w-4" />
+            <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground">
+              <Code2 className="h-4 w-4 transition-transform duration-300 group-hover:-rotate-45" />
             </div>
           </Link>
           <ModeToggle />
