@@ -25,7 +25,7 @@ const portfolioProjects = [
     description: "My personal portfolio website built with Next.js 15, TypeScript, and Tailwind CSS.",
     image: "https://baris.pw/portfolio/portfolio.png",
     liveUrl: "https://portfolio.baris.pw",
-    githubUrl: "https://github.com/byigitt/portfolio-new",
+    githubUrl: "https://github.com/byigitt/portfolio",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI"],
   },
   {

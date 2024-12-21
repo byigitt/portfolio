@@ -91,7 +91,7 @@ export const projects: Project[] = [
   {
     title: "Visa Checker",
     description: "Automated Schengen visa appointment tracker with Telegram notifications.",
-    stars: 69,
+    stars: 70,
     tags: ["TypeScript", "Automation", "Telegram", "Notifications"],
     github: "https://github.com/byigitt/visa-checker",
     category: "automation"
