@@ -29,7 +29,11 @@ const achievements = [
       },
       {
         title: "1st place @ Ostim Solana Hackathon",
-        description: "Participated in the Ostim Solana Hackathon with our project named Soulana and won the 1st place with a team of 3 people.",
+        description: "Participated in the Ostim Solana Hackathon with our project named \"Soulana\" and won the 1st place with a team of 3 people.",
+      },
+      {
+        title: "2nd place @ Ostim AI Competition",
+        description: "Participated in the Ostim AI Competition with our project named \"smartmove\" and won the 2nd place with a team of 2 people.",
       },
     ],
   },
