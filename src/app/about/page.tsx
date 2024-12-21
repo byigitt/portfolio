@@ -53,6 +53,21 @@ const portfolioProjects = [
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "Tone.js"]
   },
   {
+    title: "imatil",
+    description: "imatil is a modern, browser-based file conversion tool built with Next.js 15 that enables users to convert media files directly in their browser using WebAssembly technology.",
+    image: "https://baris.pw/portfolio/imatil.png",
+    liveUrl: "https://i.baris.pw",
+    githubUrl: "https://github.com/byigitt/imatil",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "WebAssembly", "Shadcn/UI", "FFMPEG"]
+  },
+  {
+    title: "cankaya.chat",
+    description: "cankaya.chat is a modern, browser-based chat application built with Next.js 15 that enables users to chat with each other anonymously using WebSocket technology.",
+    image: "https://baris.pw/portfolio/cankayachat.png",
+    liveUrl: "https://cankaya.chat",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "WebSocket", "PWA"]
+  },
+  {
     title: "Tourist AI Planner",
     description: "Tourist AI Planner is a web application that helps users plan their trips by providing personalized recommendations for destinations, activities, and accommodations. Did my internship here. ",
     image: "https://baris.pw/portfolio/tourist.png",
