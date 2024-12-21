@@ -30,11 +30,33 @@ const portfolioProjects = [
   },
   {
     title: "Soulana",
-    description: "Soulana is a web application that allows users to donate secure, fast and transparently using blockchain technology. We participated in the Ostim Solana Hackathon and won the 1st place with a team of 3 people.",
+    description: "Soulana is a web application that allows users to donate secure, fast and transparently using blockchain technology. Ostim Solana Hackathon, 1st place.",
     image: "https://baris.pw/portfolio/soulana.png",
     liveUrl: "https://cyberia-frontend.vercel.app",
     githubUrl: "https://github.com/wearesoulana/soulana-frontend",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI"],
+  },
+  {
+    title: "imatil",
+    description: "imatil is a modern, browser-based file conversion tool built with Next.js 15 that enables users to convert media files directly in their browser using WebAssembly technology.",
+    image: "https://baris.pw/portfolio/imatil.png",
+    liveUrl: "https://i.baris.pw",
+    githubUrl: "https://github.com/byigitt/imatil",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "WebAssembly", "Shadcn/UI", "FFMPEG"]
+  },
+  {
+    title: "cankaya.chat",
+    description: "cankaya.chat is a modern, browser-based chat application built with Next.js 15 that enables users to chat with each other anonymously using WebSocket technology.",
+    image: "https://baris.pw/portfolio/cankayachat.png",
+    liveUrl: "https://cankaya.chat",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "WebSocket", "PWA"]
+  },
+  {
+    title: "smartmove",
+    description: "smartmove is an AI-powered passenger analysis system for the Ankara Metro network that combines real-time passenger counting using YOLOv8 object detection and predictive analytics to forecast crowd density. Ostim AI Competition, 2nd place.",
+    image: "https://baris.pw/portfolio/smartmove.png",
+    githubUrl: "https://github.com/byigitt/smartmove",
+    tags: ["Python", "Numpy", "Pandas", "Scikit-learn", "Seaborn", "YOLOv8", "Shadcn/UI"]
   },
   {
     title: "Flashy",
@@ -51,21 +73,6 @@ const portfolioProjects = [
     liveUrl: "https://suncore.vercel.app",
     githubUrl: "https://github.com/byigitt/suncore",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "Tone.js"]
-  },
-  {
-    title: "imatil",
-    description: "imatil is a modern, browser-based file conversion tool built with Next.js 15 that enables users to convert media files directly in their browser using WebAssembly technology.",
-    image: "https://baris.pw/portfolio/imatil.png",
-    liveUrl: "https://i.baris.pw",
-    githubUrl: "https://github.com/byigitt/imatil",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "WebAssembly", "Shadcn/UI", "FFMPEG"]
-  },
-  {
-    title: "cankaya.chat",
-    description: "cankaya.chat is a modern, browser-based chat application built with Next.js 15 that enables users to chat with each other anonymously using WebSocket technology.",
-    image: "https://baris.pw/portfolio/cankayachat.png",
-    liveUrl: "https://cankaya.chat",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "WebSocket", "PWA"]
   },
   {
     title: "Tourist AI Planner",
@@ -162,7 +169,7 @@ export default function AboutPage() {
             >
               <Card className="h-full overflow-hidden hover:shadow-lg transition-all">
                 <Link 
-                  href={project.liveUrl} 
+                  href={project.liveUrl || project.githubUrl || ""} 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative block aspect-video group cursor-pointer overflow-hidden"
