@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with Next.js 14, TailwindCSS, and Shadcn/ui. Features a clean design, dark mode support, and smooth animations.
 
-![Portfolio Preview](preview.png)
+![Portfolio Preview](https://baris.pw/portfolio/portfolio.png)
 
 ## Features
 
@@ -35,44 +35,44 @@ A modern, responsive portfolio website built with Next.js 14, TailwindCSS, and S
 ## Getting Started
 
 1. Clone this repository:
-\`\`\`bash
-git clone https://github.com/yourusername/portfolio.git
-\`\`\`
+```bash
+git clone https://github.com/byigitt/portfolio.git
+```
 
 2. Install dependencies:
-\`\`\`bash
+```bash
 pnpm install
-\`\`\`
+```
 
-3. Update your information:
-   - Edit \`src/data/projects.ts\` for your projects
-   - Modify content in page components under \`src/app\`
+4. Update your information:
+   - Edit `src/data/projects.ts` for your projects
+   - Modify content in page components under `src/app`
    - Update social links in components
 
-4. Run the development server:
-\`\`\`bash
+5. Run the development server:
+```bash
 pnpm dev
-\`\`\`
+```
 
-5. Open [http://localhost:3000](http://localhost:3000) to see your portfolio
+6. Open [http://localhost:3000](http://localhost:3000) to see your portfolio
 
 ## Customization
 
 ### Changing Content
 - Update personal information in respective page components
-- Modify projects in \`src/data/projects.ts\`
-- Edit navigation items in \`src/components/layout/navbar.tsx\`
+- Modify projects in `src/data/projects.ts`
+- Edit navigation items in `src/components/layout/navbar.tsx`
 
 ### Styling
-- Theme colors can be modified in \`src/app/globals.css\`
+- Theme colors can be modified in `src/app/globals.css`
 - Component styling uses Tailwind classes
-- Shadcn/ui components can be customized in \`components.json\`
+- Shadcn/ui components can be customized in `components.json`
 
 ## Deployment
 
 The easiest way to deploy your portfolio is using [Vercel](https://vercel.com):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/portfolio)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/byigitt/portfolio)
 
 ## Contributing
 
