@@ -54,9 +54,9 @@ export function SpotifyNowPlaying() {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="flex items-center gap-4 dark:bg-zinc-900/90 bg-white/90 backdrop-blur-sm p-2 pr-4 rounded-lg max-w-sm w-full mt-6 -mb-2 border dark:border-zinc-800 border-zinc-200"
+      className="flex items-center gap-4 dark:bg-zinc-900/90 bg-white/90 backdrop-blur-sm p-2 pr-4 rounded-lg w-[300px] mt-6 -mb-2 border dark:border-zinc-800 border-zinc-200"
     >
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 min-w-0 flex-1">
         <div className="relative w-12 h-12 rounded-md overflow-hidden dark:bg-zinc-800 bg-zinc-100 flex-shrink-0">
           {data.albumImageUrl && (
             <Image
@@ -68,19 +68,21 @@ export function SpotifyNowPlaying() {
             />
           )}
         </div>
-        <div className="min-w-0 flex-1">
+        <div className="min-w-0 flex-1 overflow-hidden">
           <a
             href={data.songUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-sm dark:text-zinc-100 text-zinc-900 hover:underline truncate block"
+            className="font-medium text-sm dark:text-zinc-100 text-zinc-900 hover:underline block overflow-hidden text-ellipsis whitespace-nowrap"
           >
             {data.title}
           </a>
-          <p className="text-xs dark:text-zinc-400 text-zinc-500 truncate">{data.artist}</p>
+          <p className="text-xs dark:text-zinc-400 text-zinc-500 overflow-hidden text-ellipsis whitespace-nowrap">
+            {data.artist}
+          </p>
         </div>
       </div>
-      <div className="flex items-center gap-3 flex-shrink-0">
+      <div className="flex-shrink-0">
         <div className="w-6 h-6 rounded-full bg-[#1DB954] flex items-center justify-center">
           {data.isPlaying ? (
             <Pause className="w-4 h-4 text-black" />
