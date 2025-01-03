@@ -6,6 +6,28 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const achievements = [
   {
+    category: "Competition Achievements",
+    icon: <Trophy className="h-5 w-5 text-primary" />,
+    items: [
+      {
+        title: "1st place @ Ostim Solana Hackathon",
+        description: "Participated in the Ostim Solana Hackathon with our project named \"Soulana\" and won the 1st place with a team of 3 people.",
+      },
+      {
+        title: "1st place @ Cankaya University 2nd Planathon",
+        description: "Participated in the Cankaya University 2nd Planathon with detailed usage of AI and won the 1st place with a team of 5 people.",
+      },
+      {
+        title: "2nd place @ Ostim AI Competition",
+        description: "Participated in the Ostim AI Competition with our project named \"smartmove\" and won the 2nd place with a team of 2 people.",
+      },
+      {
+        title: "Outstanding Delegate Award @ MUN",
+        description: "Participated in the G-20 committee at the MUN event organized by Yusuf Kalkavan Anatolian High School and received the Outstanding Delegate Award.",
+      },
+    ],
+  },
+  {
     category: "Community Leadership",
     icon: <Users className="h-5 w-5 text-primary" />,
     items: [
@@ -21,24 +43,6 @@ const achievements = [
   },
   {
     category: "Academic Achievements",
-    icon: <Trophy className="h-5 w-5 text-primary" />,
-    items: [
-      {
-        title: "Model United Nations",
-        description: "Participated in the G-20 committee at the MUN event organized by Yusuf Kalkavan Anatolian High School and received the Outstanding Delegate Award.",
-      },
-      {
-        title: "1st place @ Ostim Solana Hackathon",
-        description: "Participated in the Ostim Solana Hackathon with our project named \"Soulana\" and won the 1st place with a team of 3 people.",
-      },
-      {
-        title: "2nd place @ Ostim AI Competition",
-        description: "Participated in the Ostim AI Competition with our project named \"smartmove\" and won the 2nd place with a team of 2 people.",
-      },
-    ],
-  },
-  {
-    category: "Volunteer Work",
     icon: <Star className="h-5 w-5 text-primary" />,
     items: [
       {
