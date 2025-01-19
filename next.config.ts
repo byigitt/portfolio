@@ -13,7 +13,6 @@ const withMDX = createMDX({
 })
 
 const nextConfig: NextConfig = {
-  output: 'standalone',
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   images: {
     unoptimized: true,
