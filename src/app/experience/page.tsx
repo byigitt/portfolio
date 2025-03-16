@@ -13,7 +13,7 @@ const experience = [
     description: [
       {
         id: "cankaya-1",
-        text: "Assisting in SENG271 (Software Project I) and SENG101 (Computer Programming I) courses.",
+        text: "Assisting in SENG271 (Software Project I), SENG272 (Software Project II), SENG384 (Software Project IV), SENG101 (Computer Programming I) and SENG102 (Computer Programming II) courses.",
       },
       {
         id: "cankaya-2",
