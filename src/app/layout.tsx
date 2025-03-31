@@ -11,37 +11,37 @@ const inter = Inter({
   preload: true,
 });
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://portfolio.baris.pw'
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://bayburt.lu'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Barış Cem Bayburtlu | Full Stack Developer',
-    template: 'Barış Cem Bayburtlu | %s'
+    default: 'Barış Bayburtlu | Full Stack Developer',
+    template: 'Barış Bayburtlu | %s'
   },
   description: 'Full Stack Developer specializing in React, Next.js, and modern web technologies. Exploring the intersection of design and development.',
   keywords: ['Full Stack Developer', 'React', 'Next.js', 'TypeScript', 'Web Development', 'Software Engineer'],
-  authors: [{ name: 'Barış Cem Bayburtlu' }],
-  creator: 'Barış Cem Bayburtlu',
+  authors: [{ name: 'Barış Bayburtlu' }],
+  creator: 'Barış Bayburtlu',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://portfolio.baris.pw',
-    siteName: 'Barış Cem Bayburtlu - Portfolio',
-    title: 'Barış Cem Bayburtlu | Full Stack Developer',
+    url: 'https://bayburt.lu',
+    siteName: 'Barış Bayburtlu - Portfolio',
+    title: 'Barış Bayburtlu | Full Stack Developer',
     description: 'Full Stack Developer specializing in React, Next.js, and modern web technologies.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Barış Cem Bayburtlu - Full Stack Developer'
+        alt: 'Barış Bayburtlu - Full Stack Developer'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Barış Cem Bayburtlu | Full Stack Developer',
+    title: 'Barış Bayburtlu | Full Stack Developer',
     description: 'Full Stack Developer specializing in React, Next.js, and modern web technologies.',
     images: ['/og-image.jpg'],
     creator: '@bariscmb'

@@ -1,17 +1,17 @@
-import { getBlogPosts } from '@/lib/mdx'
+import { getBlogPosts } from "@/lib/mdx";
 
-export const dynamic = 'force-static'
-export const revalidate = false
+export const dynamic = "force-static";
+export const revalidate = false;
 
 export default async function sitemap() {
-  const baseUrl = 'https://portfolio.baris.pw'
-  const buildDate = new Date().toISOString()
-  const posts = await getBlogPosts()
+  const baseUrl = "https://portfolio.bayburt.lu";
+  const buildDate = new Date().toISOString();
+  const posts = await getBlogPosts();
 
   const blogUrls = (posts || []).map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: post.date || buildDate,
-  }))
+  }));
 
   const staticUrls = [
     {
@@ -50,7 +50,7 @@ export default async function sitemap() {
       url: `${baseUrl}/contact`,
       lastModified: buildDate,
     },
-  ]
+  ];
 
-  return [...staticUrls, ...blogUrls]
-} 
+  return [...staticUrls, ...blogUrls];
+}

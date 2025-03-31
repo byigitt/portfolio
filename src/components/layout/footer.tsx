@@ -72,7 +72,7 @@ export function Footer() {
         </div>
         <div className="flex justify-center mt-2">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Barış Cem Bayburtlu. All rights reserved.
+            © {currentYear} Barış Bayburtlu. All rights reserved.
           </p>
         </div>
       </div>

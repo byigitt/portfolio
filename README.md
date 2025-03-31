@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with Next.js 15, TailwindCSS, and Shadcn/ui. Features a clean design, dark mode support, and smooth animations.
 
-![Portfolio Preview](https://baris.pw/portfolio/portfolio.png)
+![Portfolio Preview](https://bayburt.lu/portfolio/portfolio.png)
 
 ## Features
 
@@ -46,32 +46,38 @@ A modern, responsive portfolio website built with Next.js 15, TailwindCSS, and S
 ## Getting Started
 
 1. Clone this repository:
+
 ```bash
 git clone https://github.com/byigitt/portfolio.git
 ```
 
 2. Install dependencies:
+
 ```bash
 pnpm install
 ```
 
 3. Set up environment variables:
+
 ```bash
 cp .env.example .env.local
 ```
 
 4. Update your information:
+
    - Edit `src/data/projects.ts` for your projects
    - Add blog posts in `content/blog`
    - Modify content in page components under `src/app`
    - Update social links in components
 
 5. Generate blog data:
+
 ```bash
 pnpm generate:blog
 ```
 
 6. Run the development server:
+
 ```bash
 pnpm dev
 ```
@@ -95,17 +101,20 @@ pnpm dev
 ## Customization
 
 ### Content
+
 - Update personal information in respective page components
 - Modify projects in `src/data/projects.ts`
 - Edit navigation items in `src/components/layout/navbar.tsx`
 - Add blog posts as MDX files in `content/blog`
 
 ### Styling
+
 - Theme colors in `src/app/globals.css`
 - Component styling uses Tailwind classes
 - Shadcn/ui components can be customized in `components.json`
 
 ### Configuration
+
 - SEO settings in `src/app/layout.tsx`
 - Site metadata in page layouts
 - Environment variables in `.env.local`

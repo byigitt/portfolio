@@ -64,13 +64,13 @@ export default async function BlogPostPage({ params }: { params: Params }) {
     dateModified: post.date,
     author: {
       '@type': 'Person',
-      name: post.authors?.[0] || 'Barış Cem Bayburtlu',
-      url: 'https://portfolio.baris.pw/about',
+      name: post.authors?.[0] || 'Barış Bayburtlu',
+      url: 'https://portfolio.bayburt.lu/about',
     },
     publisher: {
       '@type': 'Person',
-      name: 'Barış Cem Bayburtlu',
-      url: 'https://portfolio.baris.pw',
+      name: 'Barış Bayburtlu',
+      url: 'https://portfolio.bayburt.lu',
     },
   }
 
