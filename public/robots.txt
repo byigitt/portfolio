@@ -2,4 +2,4 @@ User-Agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://portfolio.baris.pw/sitemap.xml 
+Sitemap: https://portfolio.bayburt.lu/sitemap.xml 
