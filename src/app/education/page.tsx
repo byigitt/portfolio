@@ -10,7 +10,7 @@ const education = [
     location: "Ankara, Turkey",
     degree: "Bachelor of Engineering in Software",
     period: "Oct. 2022 - June 2026 (Expected)",
-    gpa: "GPA: 3.10",
+    gpa: "GPA: 3.19",
     description: "Focused on software development and computer science fundamentals.",
   },
   {
