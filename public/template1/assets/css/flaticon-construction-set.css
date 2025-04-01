@@ -1,0 +1,64 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 14/07/2018 09:16
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/Flaticon.eot");
+  src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/Flaticon.woff") format("woff"),
+       url("../fonts/Flaticon.ttf") format("truetype"),
+       url("../fonts/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-forklift:before { content: "\f100"; }
+.flaticon-paint-roller-1:before { content: "\f101"; }
+.flaticon-sketch:before { content: "\f102"; }
+.flaticon-engineer:before { content: "\f103"; }
+.flaticon-skyline-2:before { content: "\f104"; }
+.flaticon-maintenance:before { content: "\f105"; }
+.flaticon-door:before { content: "\f106"; }
+.flaticon-house-sketch:before { content: "\f107"; }
+.flaticon-settings:before { content: "\f108"; }
+.flaticon-toaster:before { content: "\f109"; }
+.flaticon-wheelbarrow:before { content: "\f10a"; }
+.flaticon-plumbing:before { content: "\f10b"; }
+.flaticon-dumper:before { content: "\f10c"; }
+.flaticon-barrier:before { content: "\f10d"; }
+.flaticon-skyline-1:before { content: "\f10e"; }
+.flaticon-brick:before { content: "\f10f"; }
+.flaticon-on-the-roof:before { content: "\f110"; }
+.flaticon-roof:before { content: "\f111"; }
+.flaticon-blueprint:before { content: "\f112"; }
+.flaticon-drill:before { content: "\f113"; }
+.flaticon-window:before { content: "\f114"; }
+.flaticon-worker:before { content: "\f115"; }
+.flaticon-home:before { content: "\f116"; }
+.flaticon-steamroller:before { content: "\f117"; }
+.flaticon-skyline:before { content: "\f118"; }
+.flaticon-paint-roller:before { content: "\f119"; }
